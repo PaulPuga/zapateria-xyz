@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/zapateria-xyz/static/css/main.5f361e03.chunk.css",
-    "main.js": "/zapateria-xyz/static/js/main.dc95a379.chunk.js",
-    "main.js.map": "/zapateria-xyz/static/js/main.dc95a379.chunk.js.map",
+    "main.css": "/zapateria-xyz/static/css/main.ec6d7a8e.chunk.css",
+    "main.js": "/zapateria-xyz/static/js/main.a0296432.chunk.js",
+    "main.js.map": "/zapateria-xyz/static/js/main.a0296432.chunk.js.map",
     "runtime-main.js": "/zapateria-xyz/static/js/runtime-main.980c747e.js",
     "runtime-main.js.map": "/zapateria-xyz/static/js/runtime-main.980c747e.js.map",
-    "static/js/2.8322bfa5.chunk.js": "/zapateria-xyz/static/js/2.8322bfa5.chunk.js",
-    "static/js/2.8322bfa5.chunk.js.map": "/zapateria-xyz/static/js/2.8322bfa5.chunk.js.map",
+    "static/js/2.a3f486bc.chunk.js": "/zapateria-xyz/static/js/2.a3f486bc.chunk.js",
+    "static/js/2.a3f486bc.chunk.js.map": "/zapateria-xyz/static/js/2.a3f486bc.chunk.js.map",
     "index.html": "/zapateria-xyz/index.html",
-    "precache-manifest.ddd7179f64d3b4432656d7f3e0c6aed4.js": "/zapateria-xyz/precache-manifest.ddd7179f64d3b4432656d7f3e0c6aed4.js",
+    "precache-manifest.70042f740fd38fcc22e81d635b9b7bae.js": "/zapateria-xyz/precache-manifest.70042f740fd38fcc22e81d635b9b7bae.js",
     "service-worker.js": "/zapateria-xyz/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/zapateria-xyz/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.8322bfa5.chunk.js.LICENSE.txt": "/zapateria-xyz/static/js/2.8322bfa5.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/zapateria-xyz/static/media/logo.5d5d9eef.svg"
+    "static/css/main.ec6d7a8e.chunk.css.map": "/zapateria-xyz/static/css/main.ec6d7a8e.chunk.css.map",
+    "static/js/2.a3f486bc.chunk.js.LICENSE.txt": "/zapateria-xyz/static/js/2.a3f486bc.chunk.js.LICENSE.txt",
+    "static/media/xyz-logo.png": "/zapateria-xyz/static/media/xyz-logo.a6cd1612.png"
   },
   "entrypoints": [
     "static/js/runtime-main.980c747e.js",
-    "static/js/2.8322bfa5.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.dc95a379.chunk.js"
+    "static/js/2.a3f486bc.chunk.js",
+    "static/css/main.ec6d7a8e.chunk.css",
+    "static/js/main.a0296432.chunk.js"
   ]
 }

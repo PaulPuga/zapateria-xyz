@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/zapateria-xyz/precache-manifest.ddd7179f64d3b4432656d7f3e0c6aed4.js"
+  "/zapateria-xyz/precache-manifest.70042f740fd38fcc22e81d635b9b7bae.js"
 );
 
 self.addEventListener('message', (event) => {
