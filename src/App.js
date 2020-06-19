@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { SnackbarProvider } from "notistack";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./redux/config";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { blue } from "@material-ui/core/colors";
+//Views
+import login from "./views/login";
+
+import {
+  Route,
+  Switch,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+  },
+});
 
 function App() {
+  useEffect(() => {
+    const developerUser = {
+      username: "dev",
+      password: "123",
+    };
+    localStorage.setItem("currentUser", JSON.stringify(developerUser));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <SnackbarProvider maxSnack={3}>
+            <Switch>
+              <Route path="/" component={login} />
+            </Switch>
+          </SnackbarProvider>
+        </ThemeProvider>
+      </PersistGate>
+    </Router>
   );
 }
+let mapStateToProps = (state) => ({});
+let mapDispatchToProps = (dispatch) => ({});
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
