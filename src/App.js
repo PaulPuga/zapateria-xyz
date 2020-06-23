@@ -5,8 +5,14 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/config";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
+import service from "./services";
 //Views
 import login from "./views/login";
+import catalogue from "./views/catalogue";
+import category from "./views/category";
+import products from "./views/products";
+
+import PrivateRoute from "./utils/PrivateRoute";
 
 import {
   Route,
@@ -23,11 +29,14 @@ const theme = createMuiTheme({
 
 function App() {
   useEffect(() => {
-    const developerUser = {
-      username: "dev",
-      password: "123",
-    };
-    localStorage.setItem("currentUser", JSON.stringify(developerUser));
+    //Init fake db
+    service.general.createDB();
+    service.user.createUser({
+      id: "lskjdflñakjse342",
+      name: "dev",
+      email: "dev",
+      pass: "123",
+    });
   }, []);
   return (
     <Router>
@@ -35,7 +44,11 @@ function App() {
         <ThemeProvider theme={theme}>
           <SnackbarProvider maxSnack={3}>
             <Switch>
-              <Route path="/" component={login} />
+              <PrivateRoute exact path="/category" component={category} />
+              <PrivateRoute exact path="/catalogue" component={catalogue} />
+              <PrivateRoute exact path="/products" component={products} />
+              <Route exact path="/login" component={login} />
+              <Redirect from="/" to="category" />
             </Switch>
           </SnackbarProvider>
         </ThemeProvider>

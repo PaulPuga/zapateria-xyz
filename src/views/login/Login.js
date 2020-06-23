@@ -5,6 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { withSnackbar } from "notistack";
 import { makeStyles } from "@material-ui/core/styles";
+import api from "../../services";
+import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Login({ enqueueSnackbar }) {
-  const classes = useStyles();
+function Login({ enqueueSnackbar, history }) {
+  // const classes = useStyles();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,12 +26,12 @@ function Login({ enqueueSnackbar }) {
     if (!username.length && !password.length) {
       enqueueSnackbar("Favor de llenar todos los campos", { variant: "error" });
     } else {
-      const developerUser = JSON.parse(localStorage.getItem("currentUser"));
-      if (
-        developerUser.username === username &&
-        developerUser.password === password
-      ) {
-        alert("ACCESS");
+      const res = api.user.login(username, password);
+      console.log(res);
+
+      if (res === "access allowed") {
+        localStorage.setItem("token-valid", true);
+        history.push("/category");
       } else {
         enqueueSnackbar("Usuario o contraseña incorrectos", {
           variant: "error",
@@ -37,6 +39,10 @@ function Login({ enqueueSnackbar }) {
       }
     }
   };
+
+  useEffect(() => {
+    localStorage.removeItem("token-valid");
+  }, []);
 
   return (
     <div className="login__container">
@@ -72,4 +78,4 @@ function Login({ enqueueSnackbar }) {
   );
 }
 
-export default withSnackbar(Login);
+export default withSnackbar(withRouter(Login));
