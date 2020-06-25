@@ -2,6 +2,10 @@ export default {
   createDB: () => {
     if (!localStorage.getItem("user"))
       localStorage.setItem("user", JSON.stringify([]));
+    if (!localStorage.getItem("category"))
+      localStorage.setItem("category", JSON.stringify([]));
+    if (!localStorage.getItem("product"))
+      localStorage.setItem("product", JSON.stringify([]));
   },
   getRecordOf: (recordName) => {
     try {

@@ -51,6 +51,7 @@ const ContentContainer = styled.div`
   padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 `;
 const ChildrenContainer = styled.div`
   height: 100%;
@@ -78,7 +79,7 @@ const Nav = ({ history }) => {
         <UList>
           <Li onClick={(e) => onItemClick("/category")}>Categorias</Li>
           <Li onClick={(e) => onItemClick("/catalogue")}>Catalogo</Li>
-          <Li onClick={(e) => onItemClick("/products")}>Productos</Li>
+          <Li onClick={(e) => onItemClick("/products")}>Producto</Li>
         </UList>
       </NavTopContainer>
       <UList>

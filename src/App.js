@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import short from "short-uuid";
 import { SnackbarProvider } from "notistack";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/config";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
 import service from "./services";
+
 //Views
 import login from "./views/login";
 import catalogue from "./views/catalogue";
@@ -27,16 +29,45 @@ const theme = createMuiTheme({
   },
 });
 
+function init() {
+  //Init fake db
+  service.general.createDB();
+  //Create user
+  service.user.createUser({
+    id: short.generate(),
+    name: "dev",
+    email: "dev",
+    pass: "123",
+  });
+  if (JSON.parse(localStorage.getItem("category")).length === 0) {
+    const categories = [
+      {
+        id: short.generate(),
+        name: "Hombre",
+      },
+      {
+        id: short.generate(),
+        name: "Mujer",
+      },
+      {
+        id: short.generate(),
+        name: "Niño",
+      },
+      {
+        id: short.generate(),
+        name: "Niña",
+      },
+    ];
+    localStorage.setItem("category", JSON.stringify(categories));
+  }
+  /**
+   * Create categories
+   */
+}
+
 function App() {
   useEffect(() => {
-    //Init fake db
-    service.general.createDB();
-    service.user.createUser({
-      id: "lskjdflñakjse342",
-      name: "dev",
-      email: "dev",
-      pass: "123",
-    });
+    init();
   }, []);
   return (
     <Router>
@@ -44,11 +75,11 @@ function App() {
         <ThemeProvider theme={theme}>
           <SnackbarProvider maxSnack={3}>
             <Switch>
-              <PrivateRoute exact path="/category" component={category} />
+              <PrivateRoute path="/category" component={category} />
               <PrivateRoute exact path="/catalogue" component={catalogue} />
-              <PrivateRoute exact path="/products" component={products} />
+              <PrivateRoute path="/products" component={products} />
               <Route exact path="/login" component={login} />
-              <Redirect from="/" to="category" />
+              <Redirect from="/" to="/category" />
             </Switch>
           </SnackbarProvider>
         </ThemeProvider>
