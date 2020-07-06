@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6608f12f885e8a8084b6b28e6d21e42",
+    "revision": "7066941278b8ec08c15af5dd5242c461",
     "url": "/zapateria-xyz/index.html"
   },
   {
-    "revision": "07d5509c9011cfc59ce0",
+    "revision": "28810109e4d2dde712d9",
     "url": "/zapateria-xyz/static/css/main.ef979141.chunk.css"
   },
   {
-    "revision": "5839b8f6cbd84907658d",
-    "url": "/zapateria-xyz/static/js/2.857ad83a.chunk.js"
+    "revision": "c2e35e7a21295e0078bb",
+    "url": "/zapateria-xyz/static/js/2.d7a9b89b.chunk.js"
   },
   {
     "revision": "9110c923800987d12d856da8548c4502",
-    "url": "/zapateria-xyz/static/js/2.857ad83a.chunk.js.LICENSE.txt"
+    "url": "/zapateria-xyz/static/js/2.d7a9b89b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "07d5509c9011cfc59ce0",
-    "url": "/zapateria-xyz/static/js/main.7417b561.chunk.js"
+    "revision": "28810109e4d2dde712d9",
+    "url": "/zapateria-xyz/static/js/main.71aa4751.chunk.js"
   },
   {
     "revision": "78df5de70592a6cf5757",
