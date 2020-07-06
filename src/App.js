@@ -39,6 +39,12 @@ function init() {
     email: "dev",
     pass: "123",
   });
+  service.user.createUser({
+    id: short.generate(),
+    name: "admin",
+    email: "admin@xyz.com",
+    pass: "123",
+  });
   if (JSON.parse(localStorage.getItem("category")).length === 0) {
     const categories = [
       {
