@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/zapateria-xyz/static/css/main.ef979141.chunk.css",
-    "main.js": "/zapateria-xyz/static/js/main.7af13b33.chunk.js",
-    "main.js.map": "/zapateria-xyz/static/js/main.7af13b33.chunk.js.map",
+    "main.js": "/zapateria-xyz/static/js/main.2a2c1f97.chunk.js",
+    "main.js.map": "/zapateria-xyz/static/js/main.2a2c1f97.chunk.js.map",
     "runtime-main.js": "/zapateria-xyz/static/js/runtime-main.980c747e.js",
     "runtime-main.js.map": "/zapateria-xyz/static/js/runtime-main.980c747e.js.map",
-    "static/js/2.1b4caab1.chunk.js": "/zapateria-xyz/static/js/2.1b4caab1.chunk.js",
-    "static/js/2.1b4caab1.chunk.js.map": "/zapateria-xyz/static/js/2.1b4caab1.chunk.js.map",
+    "static/js/2.9bbc48b9.chunk.js": "/zapateria-xyz/static/js/2.9bbc48b9.chunk.js",
+    "static/js/2.9bbc48b9.chunk.js.map": "/zapateria-xyz/static/js/2.9bbc48b9.chunk.js.map",
     "index.html": "/zapateria-xyz/index.html",
-    "precache-manifest.82226b898b116cc58e7bd6fe75e7d429.js": "/zapateria-xyz/precache-manifest.82226b898b116cc58e7bd6fe75e7d429.js",
+    "precache-manifest.3811a6c83e81a9a2f58d98a40799f77a.js": "/zapateria-xyz/precache-manifest.3811a6c83e81a9a2f58d98a40799f77a.js",
     "service-worker.js": "/zapateria-xyz/service-worker.js",
     "static/css/main.ef979141.chunk.css.map": "/zapateria-xyz/static/css/main.ef979141.chunk.css.map",
-    "static/js/2.1b4caab1.chunk.js.LICENSE.txt": "/zapateria-xyz/static/js/2.1b4caab1.chunk.js.LICENSE.txt",
+    "static/js/2.9bbc48b9.chunk.js.LICENSE.txt": "/zapateria-xyz/static/js/2.9bbc48b9.chunk.js.LICENSE.txt",
     "static/media/xyz-logo.png": "/zapateria-xyz/static/media/xyz-logo.a6cd1612.png"
   },
   "entrypoints": [
     "static/js/runtime-main.980c747e.js",
-    "static/js/2.1b4caab1.chunk.js",
+    "static/js/2.9bbc48b9.chunk.js",
     "static/css/main.ef979141.chunk.css",
-    "static/js/main.7af13b33.chunk.js"
+    "static/js/main.2a2c1f97.chunk.js"
   ]
 }
