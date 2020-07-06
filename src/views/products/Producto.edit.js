@@ -137,7 +137,7 @@ const EditProduct = ({ history }) => {
   }, [productId]);
 
   return (
-    <MainTemplate sectionName="Nuevo producto">
+    <MainTemplate sectionName="Editar producto">
       <Container>
         <Form>
           <Section>
