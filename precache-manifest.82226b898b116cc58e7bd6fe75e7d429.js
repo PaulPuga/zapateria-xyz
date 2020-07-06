@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79ce2e6e33a8cfd6250d401fcc09bd09",
+    "revision": "26fb81645ab2610be18860c8f1734451",
     "url": "/zapateria-xyz/index.html"
   },
   {
-    "revision": "3094ccb6b213d1c286e2",
+    "revision": "a014e5b1c55e78a08e46",
     "url": "/zapateria-xyz/static/css/main.ef979141.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zapateria-xyz/static/js/2.1b4caab1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3094ccb6b213d1c286e2",
-    "url": "/zapateria-xyz/static/js/main.6e229eba.chunk.js"
+    "revision": "a014e5b1c55e78a08e46",
+    "url": "/zapateria-xyz/static/js/main.7af13b33.chunk.js"
   },
   {
     "revision": "78df5de70592a6cf5757",
