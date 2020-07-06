@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import MainTemplate from "../../components/MainTemplate";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
@@ -11,7 +11,7 @@ import api from "../../services";
 import short from "short-uuid";
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm } from "react-hook-form";
-import { withRouter } from "react-router-dom";
+import { useHistory, useLocation, withRouter } from "react-router-dom";
 
 const sizes = [
   "23.7",
@@ -83,9 +83,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CreateProduct = ({ history }) => {
+const EditProduct = ({ history }) => {
+  let location = useLocation();
   const classes = useStyles();
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch, errors, setValue } = useForm();
+  const [productId, setProductId] = React.useState("");
+  const [categoryId, setCategoryId] = React.useState("");
   const [categories, setCategories] = React.useState([]);
   const [selectedCategory, setSelectedCategory] = React.useState({});
   const [selectedSizes, setSelectedSizes] = React.useState("");
@@ -97,14 +100,41 @@ const CreateProduct = ({ history }) => {
       sizes: selectedSizes,
       id_: short.generate(),
     };
-    api.product.createProduct(dataToSend);
-    history.push("/products");
+    console.log(dataToSend);
+
+    api.product.editProduct(productId, dataToSend);
+    history.push("/catalogue");
   };
 
   React.useEffect(() => {
     const categoriesRecord = api.category.getAllCategories();
     setCategories(categoriesRecord);
+    setProductId(location.pathname.match(/(\w+)$/i)[0]);
   }, []);
+  React.useEffect(() => {
+    if (categories.length && categoryId) {
+      setSelectedCategory(categoryId);
+    }
+  }, [categories, categoryId]);
+  React.useEffect(() => {
+    if (!!productId) {
+      const product = api.product.getProduct(productId);
+      console.log(product);
+      setCategoryId(product.categoria);
+
+      setValue("nombre", product.nombre);
+      setValue("id", product.id);
+      setValue("marca", product.marca);
+      setValue("modelo", product.modelo);
+      setValue("materiales", product.materiales);
+      setValue("color", product.color);
+      setValue("cantidad", product.cantidad);
+      setValue("provedorNombre", product.provedorNombre);
+      setValue("provedorTelefono", product.provedorTelefono);
+      setValue("provedorCorreo", product.provedorCorreo);
+      setSelectedSizes(product.sizes);
+    }
+  }, [productId]);
 
   return (
     <MainTemplate sectionName="Nuevo producto">
@@ -288,4 +318,4 @@ const CreateProduct = ({ history }) => {
   );
 };
 
-export default withRouter(CreateProduct);
+export default withRouter(EditProduct);

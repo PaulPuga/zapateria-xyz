@@ -37,6 +37,9 @@ const Catalogue = ({ history }) => {
       api.product.deleteProduct(data.id);
       history.push("/category");
     }
+    if (op === "editar") {
+      history.push("/products/edit/" + data.id, [data.id]);
+    }
   };
 
   return (

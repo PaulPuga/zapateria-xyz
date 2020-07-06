@@ -13,6 +13,19 @@ export default {
       console.log(error);
     }
   },
+  getCategory: (id) => {
+    try {
+      if (!utils.getRecordOf("category")) {
+        throw new Error("there are not categories");
+      }
+      const categories = utils.getRecordOf("category");
+      const category = categories.find((el) => el.id === id);
+
+      return category;
+    } catch (error) {
+      console.log(error);
+    }
+  },
   createCategory: (name) => {
     const categories = utils.getRecordOf("category");
     categories.push({ id: short.generate(), name });

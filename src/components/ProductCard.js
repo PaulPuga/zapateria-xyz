@@ -68,6 +68,9 @@ const ProductCard = ({ id, title, subtitle, subtitle2, menuSelectHandle }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <MenuItem onClick={(e) => handleClose("editar", { id: id })}>
+          Editar
+        </MenuItem>
         <MenuItem onClick={(e) => handleClose("detalles", { id: id })}>
           Detalles
         </MenuItem>

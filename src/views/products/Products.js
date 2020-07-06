@@ -69,9 +69,11 @@ const Products = ({ history }) => {
   const [products, setProducts] = React.useState([]);
   const [selectedProduct, setSelectedProduct] = React.useState({});
   const [currentProduct, setCurrentProduct] = React.useState({});
+  const [categoryName, setCategoryName] = React.useState("");
   React.useEffect(() => {
     setProducts(api.product.getAllProducts());
   }, []);
+
   React.useEffect(() => {
     if (location.state && products.length > 0) {
       setSelectedProduct(products.find((el) => el.id_ === location.state[0]));
@@ -79,7 +81,10 @@ const Products = ({ history }) => {
   }, [products]);
   React.useEffect(() => {
     if (!!selectedProduct.id) {
-      setCurrentProduct(selectedProduct);
+      setCurrentProduct({
+        ...selectedProduct,
+        catName: api.category.getCategory(selectedProduct.categoria).name,
+      });
     }
   }, [selectedProduct]);
 
@@ -133,12 +138,12 @@ const Products = ({ history }) => {
               <ProductId>ID: {currentProduct.id}</ProductId>
             </div>
             <GridContainer>
-              <DataText>Categoria: {currentProduct.categoria}</DataText>
+              <DataText>Categoria: {currentProduct.catName}</DataText>
               <DataText>Marca: {currentProduct.marca}</DataText>
               <DataText>Modelo: {currentProduct.modelo}</DataText>
               <DataText>Materiales: {currentProduct.materiales}</DataText>
               <DataText>Color: {currentProduct.color}</DataText>
-              <DataText>Medida: {currentProduct.sized}</DataText>
+              <DataText>Medida: {currentProduct.sizes}</DataText>
               <DataText>Provedor: {currentProduct.provedorNombre}</DataText>
               <DataText>Telefono: {currentProduct.provedorTelefono}</DataText>
               <DataText>Email: {currentProduct.provedorCorreo}</DataText>

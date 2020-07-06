@@ -12,6 +12,12 @@ export default {
     const products = utils.getRecordOf("product");
     return products;
   },
+  getProduct: (productId) => {
+    const products = utils.getRecordOf("product");
+    const product = products.find((el) => el.id_ === productId);
+
+    return product;
+  },
   deleteProduct: (id) => {
     let products = utils.getRecordOf("product");
     products = products.filter((el) => el.id_ !== id);
@@ -23,5 +29,12 @@ export default {
       new RegExp(`(?:${q})`, "ig").test(el.nombre)
     );
     return products;
+  },
+  editProduct: (id, data) => {
+    let products = utils.getRecordOf("product");
+    products = products.filter((el) => el.id_ !== id);
+    products.push(data);
+    utils.setRecordIn("product", products);
+    return "success";
   },
 };
