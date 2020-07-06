@@ -33,7 +33,7 @@ const Category = ({ history }) => {
   }, []);
 
   const goDetails = (id) => {
-    history.push(`${path}${id}`);
+    // history.push(`${path}${id}`);
   };
 
   return (
