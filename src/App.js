@@ -70,7 +70,7 @@ function App() {
     init();
   }, []);
   return (
-    <Router>
+    <Router basename="/zapateria-xyz">
       <PersistGate persistor={persistor}>
         <ThemeProvider theme={theme}>
           <SnackbarProvider maxSnack={3}>
